@@ -1,0 +1,18 @@
+﻿Build started 29/09/2015 2:45:24 PM.
+     1>Project "C:\Users\Siisky\Desktop\GBA_Dev\Homebound\Homebound\Homebound\Homebound.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt gfx.c main.c
+         main.c
+     1>c:\users\siisky\desktop\gba_dev\homebound\homebound\homebound\main.c(270): warning C4101: 'x': unreferenced local variable
+     1>c:\users\siisky\desktop\gba_dev\homebound\homebound\homebound\main.c(411): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+     1>c:\users\siisky\desktop\gba_dev\homebound\homebound\homebound\main.c(473): error C2059: syntax error: '='
+     1>c:\users\siisky\desktop\gba_dev\homebound\homebound\homebound\main.c(480): error C2181: illegal else without matching if
+     1>c:\users\siisky\desktop\gba_dev\homebound\homebound\homebound\main.c(544): error C2059: syntax error: '}'
+         gfx.c
+         Generating Code...
+     1>c:\users\siisky\desktop\gba_dev\homebound\homebound\homebound\gfx.c(20): error C4700: uninitialized local variable 'c' used
+     1>Done Building Project "C:\Users\Siisky\Desktop\GBA_Dev\Homebound\Homebound\Homebound\Homebound.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.19

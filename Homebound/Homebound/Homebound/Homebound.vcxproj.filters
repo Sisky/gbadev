@@ -16,12 +16,18 @@
     <Filter Include="Header Files\gfx">
       <UniqueIdentifier>{66bb543d-1734-4174-9b56-57df3ef8d707}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\sfx">
+      <UniqueIdentifier>{908d9080-7cd7-4070-984b-a4b8a2b6c2cb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="gfx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sfx.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -79,6 +85,15 @@
     </ClInclude>
     <ClInclude Include="gfx\gameover.h">
       <Filter>Header Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx\credits.h">
+      <Filter>Header Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="sfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sfx\Bullhorn.h">
+      <Filter>Header Files\sfx</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

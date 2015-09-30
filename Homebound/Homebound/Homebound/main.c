@@ -4,6 +4,7 @@
 #include "screenmode.h"  //screen mode defines
 #include "keypad.h" //keypad defines
 #include "gfx.h"
+#include "sfx.h"
 
 #include "gfx/intro.h"
 #include "gfx/menu.h"
@@ -18,14 +19,24 @@
 #include "gfx/hud.h"
 #include "gfx/number.h"
 #include "gfx/gameover.h"
+#include "gfx/credits.h"
+
+
+#include "sfx/Bullhorn.h"
+
+extern const SAMPLE Bullhorn;
+
 //Defines
 #define	GUYMOVE 3 //speed of char
 #define NUMASTEROIDS 4 //Number of asteroids on screen
-#define NUMPLAYERBULLETS 20 //max num player bullets
+#define NUMPLAYERBULLETS 10 //max num player bullets
 
 //Global Variables
 u16* videoBuffer;					// which buffer do we write too (front or back)
 u16* paletteMem = (u16*)0x5000000;	// 256 16 bit BGR values starting at 0x5000000
+
+//sound 
+
 
 //prototypes
 void DoIntro(void);			// display the intro screen, and sleep for a second or two
@@ -45,7 +56,7 @@ void DrawGameOver(int score);
 int main(void)
 {
 	SetMode(MODE_4 | BG2_ENABLE | OBJ_ENABLE | OBJ_MAP_1D); //set mode 4, objects enabled
-
+	init_sfx_system(); //turn on sound
 	EraseScreen();
 
 
@@ -166,13 +177,13 @@ void menu(void)
 				FadeOut(2);
 				for (x = 0; x < 256; x++)	// set the palette for credits screen
 				{
-					paletteMem[x] = scorePalette[x];
+					paletteMem[x] = creditsPalette[x];
 				}
 				for (y = 0; y < 160; y++)// draw the screen
 				{
 					for (x = 0; x < 120; x++)
 					{
-						PlotPixel(x, y, scoreData[y * 120 + x]);
+						PlotPixel(x, y, creditsData[y * 120 + x]);
 					}
 				}
 				WaitForVblank();
@@ -320,6 +331,7 @@ void menu(void)
 		int y;
 		int loop;
 
+
 		for (loop = 0; loop < NUMPLAYERBULLETS; loop++)
 		{
 			if (as[loop]) // draw it if its on
@@ -332,8 +344,9 @@ void menu(void)
 					}
 				}
 			}
-
+			
 		}
+		
 	}
 	void DrawPause()
 	{
@@ -582,6 +595,8 @@ void menu(void)
 		int life = 40;
 		int score = 0;
 		int scorecount = 0;
+		int firerate = 0; //limit fire rate
+		int asteroidspeed;
 
 		int shipx = (240 / 2 - (player_WIDTH / 2)) / 2; //ships starting coords
 		int shipy = 140;
@@ -617,9 +632,26 @@ void menu(void)
 			if (life < 1|| score > 999)
 			{
 				//game over
-				score = 999;
+				if (score > 999)
+				{
+					score = 999;
+				}
 				play = 0;
 			}
+			//increase asteroid speed as game goes on
+			if (score < 100)
+			{
+				asteroidspeed = 2;
+			}
+			else if(score< 200)
+			{
+				asteroidspeed = 3;
+			}
+			else if (score < 300)
+			{
+				asteroidspeed = 4;
+			}
+
 			DrawBackground(bgy);
 			bgy -= bgscroll;		// scroll the background 
 			if (bgy < 1)
@@ -636,8 +668,9 @@ void menu(void)
 			if (scorecount < 10)
 			{
 				scorecount++;
+				firerate++;
 			}
-			else
+			else if(score < 999)
 			{
 				score++;
 				scorecount = 0;
@@ -682,15 +715,18 @@ void menu(void)
 				//if less that 10 player bullets
 				for (loop = 0; loop < NUMPLAYERBULLETS; loop++)
 				{
-					if (playerBullets[loop] == 0)
+					if (playerBullets[loop] == 0 && firerate > 5)
 					{
 						playerBullets[loop] = 1; //turn bullet on
 						playerBulletx[loop] = shipx + 4; //set x middle of ship
 						playerBullety[loop] = shipy; // set bullet y start.
+						firerate = 0;
+						play_sfx(&Bullhorn);
 						break;
 
 					}
 				}
+				
 			}
 
 			//check bullet collision + movement
@@ -741,7 +777,7 @@ void menu(void)
 				}
 				if (asteroids[loop] == 1) //move asteroid if on
 				{
-					asteroidy[loop] += 2;
+					asteroidy[loop] += asteroidspeed;
 
 					//check for off bottom of screen
 					if (asteroidy[loop] > 180 - asteroid_HEIGHT)

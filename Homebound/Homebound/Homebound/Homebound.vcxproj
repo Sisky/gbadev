@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="gfx.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="sfx.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="entity.h" />
@@ -20,6 +21,7 @@
     <ClInclude Include="gfx.h" />
     <ClInclude Include="gfx\asteroid.h" />
     <ClInclude Include="gfx\bg.h" />
+    <ClInclude Include="gfx\credits.h" />
     <ClInclude Include="gfx\gameover.h" />
     <ClInclude Include="gfx\hud.h" />
     <ClInclude Include="gfx\intro.h" />
@@ -33,6 +35,8 @@
     <ClInclude Include="gfx\score.h" />
     <ClInclude Include="keypad.h" />
     <ClInclude Include="screenmode.h" />
+    <ClInclude Include="sfx.h" />
+    <ClInclude Include="sfx\Bullhorn.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F9AE0C4B-D294-417A-956E-D23B739C8635}</ProjectGuid>

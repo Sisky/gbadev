@@ -44,56 +44,20 @@
     <ClInclude Include="gfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gfx\intro.h">
-      <Filter>Header Files\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="gfx\menu.h">
-      <Filter>Header Files\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="gfx\menubg.h">
-      <Filter>Header Files\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="gfx\score.h">
-      <Filter>Header Files\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="entity.h">
-      <Filter>Header Files\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="gfx\bg.h">
-      <Filter>Header Files\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="gfx\player.h">
-      <Filter>Header Files\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="gfx\asteroid.h">
-      <Filter>Header Files\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="gfx\playerhit.h">
-      <Filter>Header Files\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="gfx\playerbullet.h">
-      <Filter>Header Files\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="gfx\pause.h">
-      <Filter>Header Files\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="gfx\hud.h">
-      <Filter>Header Files\gfx</Filter>
-    </ClInclude>
     <ClInclude Include="gfx\number.h">
-      <Filter>Header Files\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="gfx\gameover.h">
-      <Filter>Header Files\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="gfx\credits.h">
       <Filter>Header Files\gfx</Filter>
     </ClInclude>
     <ClInclude Include="sfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="sfx\Bullhorn.h">
+    <ClInclude Include="sfx\fire.h">
       <Filter>Header Files\sfx</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx\entity.h">
+      <Filter>Header Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx\screens.h">
+      <Filter>Header Files\gfx</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

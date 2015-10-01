@@ -10,9 +10,7 @@
 #define RAND_MAX 32767
 volatile s32 RAND_RandomData;
 
-//--------------------------------------------------------------------------------------------
-//	Function Prototypes
-//--------------------------------------------------------------------------------------------
+//prototypes
 void Sleep(int i); // do something to stall GBA (125 is good delay for still picture display)
 void PlotPixel(int x, int y, unsigned short int c);
 void PlotPixelTransparent(int x, int y, unsigned short int c);

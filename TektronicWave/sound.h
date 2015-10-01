@@ -7,7 +7,8 @@
 #ifndef	TEKTRONIC_WAVE_SOUND_HEADER_FILE
 #define	TEKTRONIC_WAVE_SOUND_HEADER_FILE
 
-extern /*"C"*/ const PCMSOUND beep;
+extern /*"C"*/ const PCMSOUND crash;
+extern /*"C"*/ const PCMSOUND pop;
 
 #endif
 

@@ -1,4 +1,4 @@
-path=C:\Users\Scott\gbadev\devkitadv-r5-beta-3\bin
+path=C:\Users\Siisky\Documents\GitHub\gbadev\devkitadv-r5-beta-3\bin
 REM compiling with below line makes things run very slow
 REM gcc  -o homebound.elf main.c gfx.c sfx.c -lm
 

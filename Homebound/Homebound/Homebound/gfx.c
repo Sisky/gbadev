@@ -1,5 +1,4 @@
 // Implementation of gfx.h stuff
-
 #include "screenmode.h"
 #include "gfx.h"
 
